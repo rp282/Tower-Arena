@@ -1,0 +1,86 @@
+<link rel="stylesheet" type="text/css" href="loginstyle.css">
+<% 
+if(typeof errors != 'undefined') { 
+    errors.forEach(function(error) {
+        %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <%= error.msg %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>     
+        <%   
+    });     
+} 
+%>
+<% if(success_msg != '') { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= success_msg %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>        
+<% } %>
+<% if(error_msg != '') { %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <%= error_msg %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>        
+<% } %>
+<% if(error != '') { %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <%= error %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>        
+<% } %>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="/users/register" method="POST">
+            <h1>Create Account</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" id="nameR" name="nameR" placeholder="Name" />
+            <input type="email" id="emailR" name="emailR" placeholder="Email" />
+            <input type="password" id="passwordR" name="passwordR" placeholder="Password" />
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="/users/login" method="POST">
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" id="emailL" name="emailL" placeholder="Email" />
+            <input type="password" id="passwordL" name="passwordL" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1 id="login">Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1 id="login">Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>    
+</div>
+<script src="login.js"></script>
