@@ -17,6 +17,22 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    gold: {
+        type: Number,
+        default: 1000000
+    },
+    gems: {
+        type: Number,
+        default: 20000
+    },
+    level: {
+        type: Number,
+        default: 1
+    },
+    experience: {
+        type: Number,
+        default: 0
+    }    
 })
 
 const User = mongoose.model('User', UserSchema);
