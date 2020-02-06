@@ -51,6 +51,8 @@ app.use((req, res, next) => {
 // Routes
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
+app.use('/styles', express.static('styles'));
+app.use('/js', express.static('js'))
 
 const PORT = process.env.PORT || 5000;
 

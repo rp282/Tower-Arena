@@ -6,8 +6,8 @@ const User = require('../models/User');
 
 // Login page
 router.get('/login', (req, res) => res.render('login'));
-router.get('/login.js', (req, res) => res.sendFile(__dirname + '/scripts' + '/login.js'));
-router.get('/loginstyle.css', (req, res) => res.sendFile(__dirname + '/styles' + '/loginstyle.css'));
+//router.get('/login.js', (req, res) => res.sendFile(__dirname + '/scripts' + '/login.js'));
+//router.get('/loginstyle.css', (req, res) => res.sendFile(__dirname + '/styles' + '/loginstyle.css'));
 
 router.get('/register', (req, res) => res.render('login'));
 

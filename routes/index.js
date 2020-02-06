@@ -28,4 +28,16 @@ router.post('/dashboard/spendGold', ensureAuthenticated, (req, res) => {
   res.redirect('/dashboard')
 });
 
+router.get('/dashboard/champions', ensureAuthenticated, (req, res) => {
+  res.render('champions', {
+
+  })
+});
+
+router.get('/dashboard/shop', ensureAuthenticated, (req, res) => {
+  res.render('shop', {
+    
+  })
+});
+
 module.exports = router;

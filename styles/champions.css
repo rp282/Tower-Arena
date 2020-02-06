@@ -1,0 +1,49 @@
+body {
+    background: lightblue;
+  }
+  
+  .fill {
+    background-image: url('https://source.unsplash.com/random/50x50');
+    position: relative;
+    height: 50px;
+    width: 50px;
+    top: 1px;
+    left: 1px;
+    cursor: pointer;
+  }
+  
+  .hold {
+    border: solid 5px #ccc;
+  }
+  
+  .empty {
+    display: inline-block;
+    height: 55px;
+    width: 55px;
+    margin: 5px;
+    border: solid 3px lightblue;
+    background: white;
+  }
+  
+  .hovered {
+    background: #f4f4f4;
+    border-style: dashed;
+  }
+  
+  .info-container {
+    position: fixed;
+    width: 38%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    border: solid 1px black;
+  }
+  .champion-container {
+    position: fixed;
+    width: 62%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
