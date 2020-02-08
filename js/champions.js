@@ -1,9 +1,11 @@
 const fill = document.querySelector('.fill');
 const empties = document.querySelectorAll('.empty');
+const info = document.querySelector('.info-container');
 
 // Fill listeners
 fill.addEventListener('dragstart', dragStart);
 fill.addEventListener('dragend', dragEnd);
+fill.addEventListener('click', click)
 
 // Loop through empty boxes and add listeners
 for (const empty of empties) {
@@ -40,4 +42,9 @@ function dragLeave() {
 function dragDrop() {
   this.className = 'empty';
   this.append(fill);
+}
+
+// Click (fill champion info interface)
+function click() {
+  
 }

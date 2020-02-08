@@ -5,11 +5,11 @@ const passport = require('passport')
 const User = require('../models/User');
 
 // Login page
-router.get('/login', (req, res) => res.render('login'));
+router.get('/login', (req, res) => res.render('login', {layout: false}));
 //router.get('/login.js', (req, res) => res.sendFile(__dirname + '/scripts' + '/login.js'));
 //router.get('/loginstyle.css', (req, res) => res.sendFile(__dirname + '/styles' + '/loginstyle.css'));
 
-router.get('/register', (req, res) => res.render('login'));
+router.get('/register', (req, res) => res.render('login', {layout: false}));
 
 // Login handle
 router.post('/login', (req, res, next) => {
@@ -22,7 +22,6 @@ router.post('/login', (req, res, next) => {
 
 // Register handle
 router.post('/register', (req, res) => {
-  console.log(req.body);
   const { nameR, emailR, passwordR } = req.body;
   User.findOne({ email: emailR })
   .then(user => {
